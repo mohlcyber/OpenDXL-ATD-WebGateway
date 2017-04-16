@@ -36,23 +36,21 @@ McAfee ATD will update the McAfee Threat Intelligence (TIE) server with maliciou
 However malicious IP's (ATD discovered) are not used in the threat response. With OpenDXL it is possible to extend these capabilities. The script will automatically add the new discovered malicious IP's to a list. The McAfee Web Gateway is able to pull information from this shared lists. (https://community.mcafee.com/docs/DOC-5208)
 
 ### atd_subscriber.py
-The atd_subscriber.py receives DXL messages from ATD, prepares the JSON and loads web.py.
+The atd_subscriber.py receives DXL messages from ATD, filters out discovered IP's and loads web.py.
 
 Change the CONFIG_FILE path in the atd_subscriber.py file
 
 `CONFIG_FILE = "/path/to/config/file"`
 
 ### web.py
-The web.py script receives only the discovered malicious IP's and checks if the IP is already on the subscribed list. If not it will add
-the IP to the list (/var/www/html/web/subscribedlist).
-The subscribedlist is in the following format:
+The web.py script receives only the discovered malicious IP's and checks if the IP is already on the subscribed list. If not this IP will be added to the list (/var/www/html/web/subscribedlist). The subscribedlist is in the following format:
 
 `type=ip`
 
 `"1.1.1.1"`
 
 ### McAfee Web Gateway
-Add a new subscribed list in the McAfee Web Gateway and point it to the subscribed list.
+Add a new subscribed list in the McAfee Web Gateway and point it to the subscribed list. (https://community.mcafee.com/docs/DOC-5208)
 Also create a new block rule related to the subscribed list.
 
 ![42_atd_mwg](https://cloud.githubusercontent.com/assets/25227268/25074249/32d8e912-22f7-11e7-86fc-285bb960024d.PNG)
@@ -66,4 +64,4 @@ or
 
 ## Summary
 With this use case, ATD produces local intelligence that is immediatly updating cyber defense countermeassures like the 
-McAfee Web Gateway with IP's.
+McAfee Web Gateway with malicious IP's.
