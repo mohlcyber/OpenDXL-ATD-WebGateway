@@ -33,8 +33,7 @@ ATD will perform malware analytics and produce local threat intelligence. After 
 via the Data Exchange Layer (topic: /mcafee/event/atd/file/report). 
 
 McAfee ATD will also update the McAfee Threat Intelligence (TIE) server with malicious hash information. 
-However malicious IP's ATD discovered are not used. With OpenDXL it is possible to use malicious IP's and create a list of malicious IP's.
-The McAfee Web Gateway is able to pull information from this shared lists.
+However malicious IP's (ATD discovered) are not used. With OpenDXL it is possible to use any indicator of compromise and e.g. to create a list of malicious IP's. The McAfee Web Gateway is able to pull information from this shared lists. (https://community.mcafee.com/docs/DOC-5208)
 
 ### atd_subscriber.py
 The atd_subscriber.py receives DXL messages from ATD, prepares the JSON and loads web.py.
