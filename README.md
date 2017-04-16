@@ -25,15 +25,15 @@ OpenDXL Python installation
 3. ePO Certificate Authority (CA) Import ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/epocaimport.html))
 4. ePO Broker Certificates Export ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/epobrokercertsexport.html))
 
-Apache 2
+Apache2
 
 ## Configuration
 McAfee ATD receives files from multiple sensors like Endpoints, Web Gateways, Network IPS or via Rest API. 
 ATD will perform malware analytics and produce local threat intelligence. After an analysis every indicator of comprise will be published 
 via the Data Exchange Layer (topic: /mcafee/event/atd/file/report). 
 
-McAfee ATD will also update the McAfee Threat Intelligence (TIE) server with malicious hash information. 
-However malicious IP's (ATD discovered) are not used. With OpenDXL it is possible to use any indicator of compromise and e.g. to create a list of malicious IP's. The McAfee Web Gateway is able to pull information from this shared lists. (https://community.mcafee.com/docs/DOC-5208)
+McAfee ATD will update the McAfee Threat Intelligence (TIE) server with malicious hash information (MWG is able to lookup TIE). 
+However malicious IP's (ATD discovered) are not used in the threat response. With OpenDXL it is possible to extend these capabilities. The script will automatically add the new discovered malicious IP's to a list. The McAfee Web Gateway is able to pull information from this shared lists. (https://community.mcafee.com/docs/DOC-5208)
 
 ### atd_subscriber.py
 The atd_subscriber.py receives DXL messages from ATD, prepares the JSON and loads web.py.
