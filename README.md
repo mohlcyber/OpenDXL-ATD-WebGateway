@@ -20,7 +20,7 @@ McAfee ATD solution (tested with ATD 3.8)
 McAfee Web Gateway (tested with MWG 7.7.1.2)
 
 Download the [Latest Release](https://github.com/mohl1/OpenDXL-ATD-WebGateway/releases)
-    * Extract the release .zip file
+   * Extract the release .zip file
 
 OpenDXL Python installation
 1. Python SDK Installation ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/installation.html))
