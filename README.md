@@ -28,7 +28,7 @@ OpenDXL Python installation
     ```sh
     $ pip install -r requirements.txt
     ```
-    This will install the dxlclient, and requests modules. 
+    This will install the dxlclient module. 
 2. Certificate Files Creation ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/certcreation.html))
 3. ePO Certificate Authority (CA) Import ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/epocaimport.html))
 4. ePO Broker Certificates Export ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/epobrokercertsexport.html))
