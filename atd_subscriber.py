@@ -36,7 +36,7 @@ with DxlClient(config) as client:
                 query = event.payload.decode()
                 logger.info("Event received: " + query)
                 
-                query = query[:-3]
+                query = query[:query.rfind('}')+1]
                 query = json.loads(query)
                 
                 # Create Subscribed List for Web Gateway
